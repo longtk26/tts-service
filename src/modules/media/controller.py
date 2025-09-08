@@ -13,7 +13,7 @@ def get_media(media_service: AMediaService):
 
 @media_route.post("/generate-audio")
 def gen_audio_from_subtitle(media_service: AMediaService):
-    audio_bytes = media_service.generate_audio_from_subtitle("Sample subtitle text")
+    audio_bytes = media_service.generate_audio_from_subtitle("Hello, this is a test subtitle. You can replace this with any text.")
     return {
         "message": "Generated audio from subtitle",
         "data": b64encode(audio_bytes).decode('utf-8')  
